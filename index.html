@@ -3,64 +3,176 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Korir Allan Kiplangat, freelance copywriter specializing in healthcare, research, and technology content.">
+  <meta name="keywords" content="freelance copywriter, healthcare content, research writing, SEO copywriting">
+  <meta name="author" content="Korir Allan Kiplangat">
   <title>Korir Allan Kiplangat - Freelance Copywriter</title>
   <style>
+    :root {
+      --primary: #2c3e50;
+      --accent: #3498db;
+      --light-bg: #f4f6f8;
+      --dark-text: #2d2d2d;
+      --soft-border: #e1e1e1;
+    }
+
     body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: var(--light-bg);
       margin: 0;
       padding: 0;
-      background: #f5f5f5;
-      color: #333;
+      color: var(--dark-text);
     }
+
     header {
-      background: #222;
-      color: #fff;
-      padding: 20px;
+      background: var(--primary);
+      color: white;
+      padding: 40px 20px;
       text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+
+    header h2 {
+      font-weight: 400;
+      margin-top: 5px;
+      color: #bbb;
+    }
+
+    nav {
+      margin-top: 15px;
+    }
+
     nav a {
-      margin: 0 10px;
+      margin: 0 12px;
       color: #fff;
       text-decoration: none;
+      font-weight: bold;
+      font-size: 15px;
+      transition: color 0.3s ease, transform 0.3s ease;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      color: var(--accent);
+      transform: translateY(-2px);
+      text-decoration: none;
     }
+
     .container {
-      padding: 30px;
       max-width: 900px;
       margin: auto;
-      background: #fff;
+      padding: 30px 20px;
+      background: white;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
     }
-    .homepage-photo {
-      max-width: 200px;
+
+    img.homepage-photo {
+      max-width: 180px;
       display: block;
       margin: 20px auto;
-      border-radius: 8px;
+      border-radius: 50%;
+      border: 4px solid var(--accent);
+      opacity: 0;
+      transform: translateX(-50px);
+      animation: slideIn 0.8s ease-out 0.5s forwards;
     }
+
     section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in forwards;
+      animation-delay: calc(0.2s * var(--section-order));
     }
-    h2 {
-      color: #111;
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
+
+    section h2 {
+      color: var(--primary);
+      border-bottom: 2px solid var(--soft-border);
+      padding-bottom: 6px;
+      margin-bottom: 20px;
     }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      transition: transform 0.3s ease, color 0.3s ease;
+    }
+
+    ul li:hover {
+      transform: scale(1.02);
+      color: var(--accent);
+    }
+
+    p, li {
+      font-size: 1.05rem;
+    }
+
+    .button {
+      background: var(--accent);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 10px;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .button:hover {
+      background: #217dbb;
+      transform: translateY(-3px);
+    }
+
     footer {
+      background: var(--primary);
+      color: white;
       text-align: center;
-      background: #222;
-      color: #fff;
-      padding: 10px;
+      padding: 15px;
       font-size: 14px;
+      margin-top: 50px;
+      opacity: 0;
+      animation: fadeIn 1s ease-in 1.5s forwards;
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(-50px); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      nav a {
+        display: inline-block;
+        margin: 8px 5px;
+      }
+
+      .container {
+        padding: 20px 15px;
+      }
     }
   </style>
 </head>
 <body>
-  <header>
+  <header style="--section-order: 1;" role="banner">
     <h1>Korir Allan Kiplangat</h1>
     <h2>Freelance Copywriter</h2>
-    <nav>
+    <nav role="navigation">
       <a href="#about">About</a>
       <a href="#resume">Resume</a>
       <a href="#portfolio">Portfolio</a>
@@ -69,27 +181,28 @@
     </nav>
   </header>
 
-  <div class="container">
-    <img src="korir-homepage.jpg" alt="Korir Allan Kiplangat" class="homepage-photo" />
+  <div class="container" role="main">
+    <img src="images/korir-homepage.jpg" alt="Korir Allan Kiplangat" class="homepage-photo" onerror="this.src='https://via.placeholder.com/180';"/>
 
-    <section id="about">
+    <section id="about" style="--section-order: 2;">
       <h2>About Me</h2>
-      <p>I'm a freelance copywriter with a deep passion for creating content that resonates, informs, and converts. With a background in nursing and research writing, I bring clarity, empathy, and impact to every project.</p>
+      <p>I’m a freelance copywriter with a passion for powerful content that speaks, connects, and converts. I blend creativity with clarity, bringing healthcare, research, and technology content to life with precision and persuasion.</p>
     </section>
 
-    <section id="resume">
+    <section id="resume" style="--section-order: 3;">
       <h2>Resume</h2>
-      <p><strong>Education:</strong><br/>
-      Nursing Student, Kenya Highlands University – Graduating 2028</p>
-
-      <p><strong>Key Skills:</strong><br/>
-      - Research Writing<br/>
-      - Content Creation<br/>
-      - SEO Optimization<br/>
-      - Copy Editing</p>
+      <p><strong>Education:</strong><br>
+      Nursing Student, Kenya Highlands University (Graduating 2028)</p>
+      <p><strong>Key Skills:</strong></p>
+      <ul>
+        <li>Research Writing</li>
+        <li>Content Creation</li>
+        <li>SEO Optimization</li>
+        <li>Copy Editing</li>
+      </ul>
     </section>
 
-    <section id="portfolio">
+    <section id="portfolio" style="--section-order: 4;">
       <h2>Portfolio</h2>
       <ul>
         <li><strong>Human Enhancement Project</strong> – Halifax Public Library</li>
@@ -98,20 +211,34 @@
       </ul>
     </section>
 
-    <section id="blog">
+    <section id="blog" style="--section-order: 5;">
       <h2>Blog</h2>
-      <p>Coming soon – I'll be sharing insights on writing, storytelling, and creative freelancing.</p>
+      <p>Coming soon: I’ll be writing about copywriting, freelancing, content strategy, and storytelling.</p>
     </section>
 
-    <section id="contact">
+    <section id="contact" style="--section-order: 6;">
       <h2>Contact</h2>
-      <p><strong>Phone:</strong> +254 759 076 413<br/>
+      <p><strong>Phone:</strong> +254 759 076 413<br>
          <strong>Email:</strong> kiplangatallan33@gmail.com</p>
+      <a href="mailto:kiplangatallan33@gmail.com" class="button">Email Me</a>
     </section>
   </div>
 
-  <footer>
+  <footer role="contentinfo">
     &copy; 2025 Korir Allan Kiplangat. All rights reserved.
   </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
